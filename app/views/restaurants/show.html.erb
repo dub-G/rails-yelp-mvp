@@ -1,0 +1,18 @@
+  <h1><%=@restaurant.name%></h1>
+    <p><%=@restaurant.address%></p>
+    <p><%=@restaurant.phone_number%></p>
+    <p><%=@restaurant.category%></p>
+
+<% @reviews.each do |review| %>
+  <div>
+    <h3><%= review.content %></h3>
+    <p><%= review.rating %></p>
+  </div>
+
+<% end %>
+
+
+<%= link_to "Delete", restaurant_path(@restaurant),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
